@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import collections
 # Read file
 def getNameOfInputFile():
   raw_val = input("Please enter the name of the input file: ")
@@ -20,7 +21,8 @@ def getWordReferenceDict(fileName):
                else:
                    words_dict[w] = [line_no]
         file.close()
-        return words_dict
+        ordered_dict = collections.OrderedDict(sorted(words_dict.items()))
+        return ordered_dict
     except Exception as e:
         print("Error writing the out file" + str(e))
 
@@ -29,7 +31,7 @@ def writeOutput(outFileName, words_dict):
     try:
         # Get all occurrences:
         oFile = open(outFileName, "w")
-        for w in sorted(words_dict.iterkeys()):
+        for w in words_dict:
             oFile.write(w + ' ' + ",".join(str(x) for x in words_dict[w]) + '\n')
 
         oFile.close()
