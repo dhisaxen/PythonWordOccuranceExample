@@ -1,0 +1,10 @@
+Peter is hungry
+Hungry Peter is eating
+Abc is hungry
+Intelligent Xyz is eating
+James is hungry
+Hungry Peter is eating
+Peter is hungry
+Hungry James is eating
+Xyz is hungry
+Audacious Abc is eating
